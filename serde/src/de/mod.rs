@@ -178,7 +178,10 @@ pub trait Error: Sized + error::Error {
         }
         impl<'a> Display for InvalidType<'a> {
             fn fmt(&self, formatter: &mut fmt::Formatter) -> fmt::Result {
-                write!(formatter, "invalid type: {}, expected {}", self.unexp, self.exp)
+                write!(formatter,
+                       "invalid type: {}, expected {}",
+                       self.unexp,
+                       self.exp)
             }
         }
         Error::custom(InvalidType {
@@ -207,7 +210,10 @@ pub trait Error: Sized + error::Error {
         }
         impl<'a> Display for InvalidValue<'a> {
             fn fmt(&self, formatter: &mut fmt::Formatter) -> fmt::Result {
-                write!(formatter, "invalid value: {}, expected {}", self.unexp, self.exp)
+                write!(formatter,
+                       "invalid value: {}, expected {}",
+                       self.unexp,
+                       self.exp)
             }
         }
         Error::custom(InvalidValue {
@@ -232,7 +238,10 @@ pub trait Error: Sized + error::Error {
         }
         impl<'a> Display for InvalidLength<'a> {
             fn fmt(&self, formatter: &mut fmt::Formatter) -> fmt::Result {
-                write!(formatter, "invalid length {}, expected {}", self.len, self.exp)
+                write!(formatter,
+                       "invalid length {}, expected {}",
+                       self.len,
+                       self.exp)
             }
         }
         Error::custom(InvalidLength {
